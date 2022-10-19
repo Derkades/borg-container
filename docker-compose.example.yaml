@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+
+  serve:
+    image: derkades/borg-serve
+    volumes:
+      - type: bind
+        source: /mnt/disk/borg/data
+        target: /data
+      - type: bind
+        source: /mnt/disk/borg/keys
+        target: /keys
+    ports: ['26482:22']
+    environment:
+      KEY: "ssh-ed25519 verylongstring"
+      BANDWIDTH_LIMIT: 1000
+      STORAGE_QUOTA: 250G
+      # Enable to prevent the backup client from deleting existing backups, only allowing it to create new backups
+      # APPEND_ONLY: 'true'
