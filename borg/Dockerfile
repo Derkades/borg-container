@@ -1,7 +1,6 @@
-# Tags: https://hub.docker.com/_/alpine?tab=tags&page=1&ordering=last_updated
-FROM alpine:3.15
+FROM alpine:3.19
 
-RUN apk add --no-cache borgbackup --repository=http://dl-cdn.alpinelinux.org/alpine/v3.15/community
+RUN apk add --no-cache borgbackup --repository=http://dl-cdn.alpinelinux.org/alpine/v3.19/community
 
 # Self-test
 RUN borg
