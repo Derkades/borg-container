@@ -8,8 +8,7 @@ RUN sed -i \
         -e 's/^#HostKey \/etc\/ssh\/ssh_host_ecdsa_key$/HostKey \/keys\/ecdsa/g' \
         -e 's/^#HostKey \/etc\/ssh\/ssh_host_rsa_key$/HostKey \/keys\/rsa/g' \
         /etc/ssh/sshd_config && \
-    mkdir -p /root/.ssh /var/run/sshd && \
-    passwd -u root
+    mkdir -p /root/.ssh /var/run/sshd
 
 COPY entrypoint.sh /
 
