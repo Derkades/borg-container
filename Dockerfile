@@ -1,6 +1,8 @@
-FROM derkades/borg
+FROM docker.io/debian:trixie
 
-RUN apk add --no-cache openssh-server
+RUN apt update && \
+    apt install -y borgbackup openssh-server && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN sed -i \
         -e 's/^#PasswordAuthentication yes$/PasswordAuthentication no/g' \
