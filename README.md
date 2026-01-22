@@ -2,7 +2,7 @@ Docker container with locked down SSH server for Borg. Let your friends make bac
 
 ## Usage
 
-See `docker-compose.example.yaml` for a docker-compose example.
+See `compose.yaml` for a docker-compose example.
 
 The repository is stored in /data, the SSH server keys are stored in /keys. Losing /keys is not a disaster, just inconvenient because the client will throw man in the middle warnings until manually cleared.
 
