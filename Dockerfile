@@ -1,7 +1,7 @@
 FROM docker.io/debian:trixie
 
 RUN apt-get update && \
-    apt-get install -y borgbackup openssh-server && \
+    apt-get install -y --no-install-recommends borgbackup openssh-server && \
     rm -rf /var/lib/apt/lists/*
 
 RUN sed -i \
