@@ -8,7 +8,7 @@ then
     exit 1
 fi
 
-COMMAND="borg serve --restrict-to-repository /data --remote-ratelimit $BANDWIDTH_LIMIT --storage-quota $STORAGE_QUOTA"
+COMMAND="borg serve --restrict-to-repository /data --upload-ratelimit $BANDWIDTH_LIMIT --storage-quota $STORAGE_QUOTA"
 
 if [ "$APPEND_ONLY" = "true" ]
 then
